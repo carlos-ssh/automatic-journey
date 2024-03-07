@@ -1,19 +1,17 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :set_comment, only: %i[show edit update destroy]
 
   def index
     # @comments = Comment.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @comment = Comment.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @article = Article.find(params[:article_id])
@@ -21,13 +19,13 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to article_path(@article), notice: "Comment was successfully created." }
+        format.html { redirect_to article_path(@article), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         # Carga adicional de datos necesarios para la vista del artículo
         @comments = @article.comments
 
-        format.html { render "articles/show", status: :unprocessable_entity }
+        format.html { render 'articles/show', status: :unprocessable_entity }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -36,7 +34,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully updated." }
+        format.html { redirect_to comment_url(@comment), notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,17 +47,18 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    def comment_params
-      params.require(:comment).permit(:body)
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:body)
+  end
 end
