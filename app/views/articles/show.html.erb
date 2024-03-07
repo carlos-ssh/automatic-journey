@@ -1,29 +1,40 @@
-<h1>Show view</h1>
-<div class="article">
-    <h2>Article description</h2>
-    <p><%= @article.title %></p>
-    <p><%= @article.body %></p>
-    <p><%= @article.active %></p>
-</div>
+<div class="article-container">
+    <h1><%= @article.title %></h1>
+    <div class="article">
+        <h4><%= @article.body %></h4>
+        <p>Active: <%= @article.active %></p>
+        <p>Published at: <%= @article.created_at.strftime("%m/%d/%Y %H:%M") %></p>
+    </div>
 
-<div>
-    <h2>Comments</h2>
-    <% @comments.each do |comment| %>
-        <p><%= comment.body %></p>
-    <% end %>
+    <div class="comments-container">
+        <h2 class="comments-title">Latest Comments</h2>
+        <% @comments.each do |comment| %>
+            <p class="comment-row">
+                <%= comment.body %>
+            </p>
+        <% end %>
+    </div>
 
-</div>
-
-<div>
-    <h2>Create a new comment</h2>
-    <%= form_for([@article, @comment]) do |f| %>
-        <div>
-            <%= f.label :body, "Add your comment" %>
-            <%= f.text_area :body %>
+    <div class="comment-form">
+        <h2 class="post-comment-title">Post a comment</h2>
+        <% if @comment.errors.any? %>
+            <div id="error_explanation">
+                <h3 class="title-error"><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h3>
+            <ul class="errors-text">
+                <% @comment.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
         </div>
+        <% end %>
+        <%= form_for([@article, @comment]) do |f| %>
+            <div class="area-container">
+                <%= f.text_area :body, placeholder: 'Type your message', class: 'text-area', cols: 50 %>
+            </div>
 
-        <div>
-            <%= f.submit "Create" %>
-        </div>
-    <% end %>
+            <div class="button-comment-container">
+                <%= f.submit "Create", class: 'post-button' %>
+            </div>
+        <% end %>
+    </div>
 </div>

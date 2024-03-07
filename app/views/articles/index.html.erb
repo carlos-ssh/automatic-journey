@@ -1,11 +1,22 @@
-<h1>Articles</h1>
-<p>Check out our new Articles</p>
-
-<%= link_to 'Create new article', new_article_path %>
-
-<% @articles.each do |a| %>
-    <p><%= a.title %></p>
-    <p><%= a.body %></p>
-    <p><%= a.active %></p>
-    <%= link_to 'Show', article_path(a) %>
-<% end %>
+<div class="articles-container">
+    <div class="header-articles">
+        <div class="header-texts">
+            <h1 class="articles-title">Articles</h1>
+            <p>Check out our new Articles</p>
+        </div>
+        <div class="button-container">
+            <%= link_to 'Create article', new_article_path, class: 'button-article' %>
+        </div>
+    </div>
+    <div class="articles-table">
+        <% @articles.each do |a| %>
+            <div class="articles-list-container">
+                <div class="text-container">
+                    <h3 class="article-text-title"><%= a.title %></h3>
+                    <p><%= a.body %></p>
+                </div>
+                <%= link_to 'Show', article_path(a), class: 'post-link' %>
+            </div>
+        <% end %>
+    </div>
+</div>

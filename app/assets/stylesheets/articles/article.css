@@ -1,0 +1,109 @@
+.title-error {
+    background-color: red;
+    color: #fff;
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+
+.errors-text {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding:5px;
+}
+@media screen and (min-width: 320px) {
+    .article {
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    .comment-row {
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        padding: 8px;
+
+        margin: 10px 0;
+    }
+
+    .comments-title {
+        text-align: center;
+    }
+
+    .comment-form {
+        border: 1px solid #000;
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    .post-comment-title {
+        text-align: center;
+    }
+
+    .text-area {
+        height: 200px;
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #000;
+        border-radius: 4px;
+        padding: 8px;
+        color: blue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .button-comment-container {
+        padding: 8px;
+    }
+
+    .post-button {
+        margin: auto;
+        width: 100%;
+        background-color: blue;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: #f9f9f9;
+        border: none;
+    }
+
+    .post-button:hover {
+        background-color: rgb(4, 4, 193);
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    .button-comment-container {
+        text-align: center;
+    }
+
+    .comment-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-area {
+        height: 200px;
+        width: 90%;
+        margin: 0 auto;
+        max-width: 720px;
+        border: 1px solid #989898;
+        border-radius: 4px;
+        padding: 8px;
+        color: blue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .post-button {
+        display: inline-block;
+        margin: auto;
+        width: auto;
+        max-width: 120px;
+        width: 100%;
+        background-color: blue;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: #f9f9f9;
+        border: none;
+    }
+}
