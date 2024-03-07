@@ -1,0 +1,28 @@
+.title-form-container,
+.text-form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+}
+
+.button-form-container {
+    margin: 15px 0;
+}
+
+.create-button {
+    margin: auto;
+    width: 120px;
+    background-color: blue;
+    padding: 8px 10px;
+    border-radius: 12px;
+    color: #f9f9f9;
+    border: none;
+}
+
+.back-button {
+    width: 60px;
+    background-color: #f9f9f9;
+    padding: 8px 10px;
+    border-radius: 12px;
+    text-decoration: none;
+}

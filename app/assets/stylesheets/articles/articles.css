@@ -1,0 +1,118 @@
+
+.articles-title {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 320px) {
+    .main-container {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .navbar {
+        background-color: #000;
+        color: #f9f9f9;
+        font-weight: bold;
+        min-height: 40px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 8px;
+    }
+
+    .article {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .header-texts {
+        text-align: center;
+        line-height: 3.5px;
+        margin-bottom: 8px;
+    }
+
+    .header-articles {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .button-article {
+        background-color: blue;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: #f9f9f9;
+        text-decoration: none;
+        /* margin: 8px 0; */
+    }
+
+    .articles-container {
+        margin: auto;
+        max-width: 1024px;
+        min-width: 300px;
+        width: 90%;
+    }
+
+    .post-link {
+        text-decoration: none;
+        background-color: #fff;
+        padding: 7px 10px;
+        border-radius: 12px;
+        color: blue;
+    }
+
+    .articles-list-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .articles-table {
+        border-radius: 12px;
+        border: 1px solid #767676;
+        margin: 10px auto;
+    }
+
+    .articles-list-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-link:active {
+        background-color: #e4e4e4;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .main-container {
+        padding: 30px;
+        max-width: 1024px;
+        margin: auto;
+    }
+
+    .header-articles {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+    }
+
+    .articles-list-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .post-link:active {
+        background-color: #e4e4e4;
+    }
+}
+
+.post-link:hover {
+    background-color: #e4e4e4;
+}
