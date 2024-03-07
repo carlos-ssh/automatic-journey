@@ -1,0 +1,29 @@
+<h1>Show view</h1>
+<div class="article">
+    <h2>Article description</h2>
+    <p><%= @article.title %></p>
+    <p><%= @article.body %></p>
+    <p><%= @article.active %></p>
+</div>
+
+<div>
+    <h2>Comments</h2>
+    <% @comments.each do |comment| %>
+        <p><%= comment.body %></p>
+    <% end %>
+
+</div>
+
+<div>
+    <h2>Create a new comment</h2>
+    <%= form_for([@article, @comment]) do |f| %>
+        <div>
+            <%= f.label :body, "Add your comment" %>
+            <%= f.text_area :body %>
+        </div>
+
+        <div>
+            <%= f.submit "Create" %>
+        </div>
+    <% end %>
+</div>
